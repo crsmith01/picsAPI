@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const searchImages = async () => {
+const searchImages = async (term) => {
     const response = await axios.get('https://api.unsplash.com/search/photos', {
         headers: {
             // access key for authorization
@@ -8,7 +8,7 @@ const searchImages = async () => {
         },
         // string that goes into the url
         params: {
-            query: 'cars'
+            query: term
         }
     })
     return response.data.results
